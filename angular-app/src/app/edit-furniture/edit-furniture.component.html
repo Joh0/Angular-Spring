@@ -1,0 +1,53 @@
+<!-- If we use a table with 2-way-binding instead of form, then if the user is not granted authority to edit, they
+are able to edit the words in the Edit Furniture component which will modify the respective furniture in the
+Furniture List component due to 2-way-binding. -->
+
+<!-- <table border="1" align="center">
+    <tr>Editing the IKEA Furniture</tr>
+    <tr>
+        <td>Id: </td>
+        <td><input type="text" [(ngModel)]="furniture['id']" disabled></td>
+    </tr>
+    <tr>
+        <td>Name: </td>
+        <td><input type="text" [(ngModel)]="furniture['name']"></td>
+    </tr>
+    <tr>
+        <td>Description: </td>
+        <td><input type="text" [(ngModel)]="furniture['description']"></td>
+    </tr>
+    <tr>
+        <td>Price: </td>
+        <td><input type="number" [(ngModel)]="furniture['price']"></td>
+    </tr>
+    <tr>
+        <td align="left"><button type="submit" (click)="onDiscardEdit()">Discard Changes</button></td>
+        <td align="right"><button type="submit" (click)="onEditFurniture()">Save Changes</button></td>
+    </tr>
+</table> -->
+
+<form (ngSubmit)="onEditFurniture(f)" #f="ngForm">
+    <table border="1" align="center">
+        <tr>Editing the IKEA Furniture</tr>
+        <tr>
+            <td>Id: </td>
+            <td><input type="text" ngModel name="id" readonly></td>
+        </tr>
+        <tr>
+            <td>Name: </td>
+            <td><input type="text" ngModel name="name"></td>
+        </tr>
+        <tr>
+            <td>Description: </td>
+            <td><input type="text" ngModel name="description"></td>
+        </tr>
+        <tr>
+            <td>Price: </td>
+            <td><input type="number" ngModel name="price"></td>
+        </tr>
+        <tr>
+            <td align="left"><button type="submit" (click)="onDiscardEdit()">Discard Changes</button></td>
+            <td align="right"><button type="submit">Save Changes</button></td>
+        </tr>
+    </table>
+</form>

@@ -1,0 +1,35 @@
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <table border="1" align="center">
+        <tr>Search an IKEA Furniture</tr>
+        <tr>
+            <td>Id: </td>
+            <td><input type="number" ngModel name="id"></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="right"><button type="submit">Search</button></td>
+        </tr>
+    </table>
+</form>
+<br><br>
+<div *ngIf="hasSearched">
+    <table border="1" align="center">
+        <tr>Search Result for your IKEA Furniture</tr>
+        <tr>
+            <td>Id: </td>
+            <td>{{ furniture.id }}</td>
+        </tr>
+        <tr>
+            <td>Name: </td>
+            <td>{{ furniture.name }}</td>
+        </tr>
+        <tr>
+            <td>Description: </td>
+            <td>{{ furniture.description }}</td>
+        </tr>
+        <tr>
+            <td>Price: </td>
+            <td>{{ furniture.price }}</td>
+        </tr>
+    </table>
+</div>
+<p>{{ error }}</p>

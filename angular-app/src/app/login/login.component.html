@@ -1,0 +1,16 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <p>
+            Please fill in your credentials and Click Login!
+        </p>
+            <label>Username</label>&nbsp;
+            <input type="text" formControlName="username">&nbsp;
+            <span *ngIf="!loginForm.get('username')?.valid && loginForm.get('username')?.touched">Please enter a username!</span>
+            <br><br>
+            <label>Password</label>&nbsp;
+            <input type="password" formControlName="password">&nbsp;
+            <span *ngIf="!loginForm.get('password')?.valid && loginForm.get('password')?.touched">Please enter a password!</span>
+            <br><br>
+            <button type="submit" [disabled]="loginForm.invalid">Login</button>
+</form>
+<br><br>
+<p>{{ error }}</p>

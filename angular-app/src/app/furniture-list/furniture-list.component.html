@@ -1,0 +1,30 @@
+<table align="center" border="1">
+    <tr>
+        IKEA Furniture List
+    </tr>
+    <tr>
+        <td>Id</td>
+        <td>Name</td>
+        <td>Description</td>
+        <td>Price</td>
+        <td>Edit Details</td>
+        <td>Delete</td>
+    </tr>
+    <tr *ngFor="let f of furnitures">
+        <td>{{f.id}}</td>
+        <td>{{f.name}}</td>
+        <td>{{f.description}}</td>
+        <td>{{f.price}}</td>
+        <td><button (click)="onEditFurniture(f)">Click to Edit!</button></td>
+        <td><button (click)="onDeleteFurniture(f.id)" [disabled] = "editing">Click to Remove!</button></td>
+    </tr>
+</table>
+<br><br>
+<button (click)="onRefreshFurnitureList()" [disabled] = "editing">Refresh Furniture List</button>
+<br><br>
+<div *ngIf="editing">
+    <router-outlet></router-outlet>
+</div>
+<p>{{ error }}</p>
+
+

@@ -1,0 +1,14 @@
+<table>
+    <tr>
+        <td>IKEA</td>
+        <td><a [routerLink]="'/'">Home</a></td>
+        <td><a [routerLink]="'/furnitures'">Furniture List</a></td>
+        <td><a [routerLink]="'/addFurniture'">Add Furniture</a></td>
+        <td><a [routerLink]="'/searchFurniture'">Search Furniture</a></td>
+        <td><a [routerLink]="'/login'">Login</a></td>
+        <td><button (click)="onLogout()">Logout</button></td>
+        <td *ngIf="user.username != '' && signedIn == true">Welcome {{user.username | uppercase}}</td>
+    </tr>
+</table>
+<br><br>
+<router-outlet></router-outlet>

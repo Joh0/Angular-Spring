@@ -1,0 +1,22 @@
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <table border="1" align="center">
+        <tr>Add a new IKEA Furniture</tr>
+        <tr>
+            <td>Name: </td>
+            <td><input type="text" ngModel name="name"></td>
+        </tr>
+        <tr>
+            <td>Description: </td>
+            <td><input type="text" ngModel name="description"></td>
+        </tr>
+        <tr>
+            <td>Price: </td>
+            <td><input type="number" ngModel name="price"></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="right"><button type="submit">Add</button></td>
+        </tr>
+    </table>
+</form>
+<br><br>
+<p>{{ error }}</p>
